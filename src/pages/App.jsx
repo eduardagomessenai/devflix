@@ -49,15 +49,17 @@ const App = () => {
           onClick={() => searchMovies(searchTerm)}
         />
       </div>
-    {movies?.length > 0 ? (
-      <div className="container">
-        {movies.map((movie) => (<MovieCard key={movie.imdbID} movies ={movie}/>))}
-      </div>
-    ) : (
-      <div className="empty">
-        <h2>Nenhum filme encontrado 🥺</h2>
-      </div>
-    )}
+      {movies?.length > 0 ? (
+        <div className="container">
+          {movies.map((movie) => (
+            <MovieCard key={movie.imdbID} movies={movie} />
+          ))}
+        </div>
+      ) : (
+        <div className="empty">
+          <h2>Nenhum filme encontrado 🥺</h2>
+        </div>
+      )}
     </div>
   );
 };
