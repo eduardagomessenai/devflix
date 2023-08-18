@@ -1,12 +1,16 @@
 import { useEffect } from "react";
 import { useState } from "react";
+
 import logo from "../assets/devflix.png";
 import searchIcon from "../assets/search.svg";
 
 import "./App.css";
+import MovieCard from "../components/movieCard/movieCard";
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [movies, setMovies] = useState([]);
+
   const apiKey = "e4d577fa";
   const apiUrl = `https://omdbapi.com/?apikey=${apiKey}`;
 
@@ -19,6 +23,7 @@ const App = () => {
     const data = await response.json();
 
     console.log(data);
+    setMovies(data.Search);
   };
 
   const handleKeyPress = (e) => {
@@ -35,7 +40,6 @@ const App = () => {
         <input
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          onChange={(e) => setSearchTerm(e.target.value)}
           onKeyDown={handleKeyPress}
           placeholder="Pesquise por filmes"
         />
@@ -45,6 +49,15 @@ const App = () => {
           onClick={() => searchMovies(searchTerm)}
         />
       </div>
+    {movies?.length > 0 ? (
+      <div className="container">
+        {movies.map((movie) => (<MovieCard key={movie.imdbID} movies ={movie}/>))}
+      </div>
+    ) : (
+      <div className="empty">
+        <h2>Nenhum filme encontrado 🥺</h2>
+      </div>
+    )}
     </div>
   );
 };
