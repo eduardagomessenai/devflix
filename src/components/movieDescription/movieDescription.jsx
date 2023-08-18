@@ -1,13 +1,22 @@
 import styles from "./movieDescription.module.css";
+import devFlix from "/favicon.png";
 
-const MovieDesc = ({ movies }) => {
+const MovieDesc = ({ movies, click }) => {
   const movie = movies;
   return (
-    <div className={styles.modalBackDrop}>
-      <div className={styles.movieModal}>
+    <div className={styles.modalBackDrop} onClick={click}>
+      <div className={styles.movieModal} onClick={(e) => e.stopPropagation()}>
         <div className={styles.movieInfo}>
-          <img src="https://via.placeholder.com/400" alt="" />
-          <button className={styles.btnClose}>x</button>
+            <img src={movie.Poster} alt={movie.Title} /> 
+          <button className={styles.btnClose} onClick={click}>x</button>
+          <div className={styles.movieType}> 
+
+          <div>
+          <img src={devFlix} alt="Logo DEVFLIX" />{movie.Type}
+          <h1>{movie.Title}</h1>
+          </div>
+
+          </div>
         </div>
       </div>
     </div>
