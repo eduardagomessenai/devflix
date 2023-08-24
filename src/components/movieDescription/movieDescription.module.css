@@ -36,7 +36,6 @@
   object-position: top;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-
 }
 .btnClose {
   position: absolute;
@@ -89,11 +88,27 @@
   text-align: justify;
   font-size: 14pt;
 }
+@media screen and (max-width: 768px){
+  .movieModal{
+    width: 550px;
+  }
+}
+@media screen and (max-width: 430px){
+  .movieModal{
+    width: 320px;
+    margin-top: 2em;
+  }
+}
+.desc{
+  padding-bottom: 3.5em;
+}
+
 @keyframes fadeIn {
-  from{
+  from {
     opacity: 0;
   }
-  to{
+  to {
     opacity: 1;
   }
 }
+

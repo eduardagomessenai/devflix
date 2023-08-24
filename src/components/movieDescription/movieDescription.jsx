@@ -30,16 +30,21 @@ const MovieDesc = ({ movies, click }) => {
               <img src={devFlix} alt="Logo DEVFLIX" />
               {movie.Type}
               <h1>{movie.Title}</h1>
-              <a href={`https://google.com/search?q=${encodeURIComponent(movie.Title)}`} 
-              target="_blank"
+              <a
+                href={`https://google.com/search?q=${encodeURIComponent(
+                  movie.Title
+                )}`}
+                target="_blank"
               >
-              ▶️Assistir</a>
+                ▶️Assistir
+              </a>
             </div>
           </div>
         </div>
         <div className={styles.containerMisc}>
           <div className={styles.containerFlex}>
-          Avaliação: {movie.imdbRating}/10 | Duração: {movie.Runtime} | {"" }{movie.Year}
+            Avaliação: {movie.imdbRating}/10 | Duração: {movie.Runtime} | {""}
+            {movie.Year}
           </div>
           <div className={styles.containerFlex}>
             <p>Elenco: {movie.Actors}</p>
