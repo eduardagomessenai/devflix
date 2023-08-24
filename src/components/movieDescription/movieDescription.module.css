@@ -4,8 +4,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.4);
   z-index: 999;
+  animation: fadeIn 0.4s ease-in-out forwards;
 }
 .movieModal {
   position: fixed;
@@ -19,6 +20,7 @@
   z-index: 1000;
   color: #fff;
   max-width: 100vh;
+  animation: fadeIn 0.4s ease-in-out forwards;
 }
 .movieInfo {
   width: 100%;
@@ -32,6 +34,9 @@
   height: 480px;
   object-fit: cover;
   object-position: top;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
 }
 .btnClose {
   position: absolute;
@@ -45,22 +50,50 @@
   color: #fff;
   cursor: pointer;
 }
-.movieType{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 30%;
-    background: linear-gradient(#ffffff00, #000);
+.movieType {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(#ffffff00, #000);
 }
-.movieType div:nth-of-type(1){
-    position: absolute;
-    top: 2em;
-    left: 2em;
-    color: #fff;
-    text-transform: uppercase;
+.movieType div:nth-of-type(1) {
+  position: absolute;
+  top: 2em;
+  left: 2em;
+  color: #fff;
+  text-transform: uppercase;
 }
-.movieType div:nth-of-type(1) img{
-    width: 5%;
-    height: 5%;
-    border-radius: 0;
+.movieType div:nth-of-type(1) img {
+  width: 5%;
+  height: 5%;
+  border-radius: 0;
+}
+.movieType a {
+  margin-top: 1em;
+  padding: 0.2em 0.7em;
+  background: #fff;
+  border-radius: 0.4em;
+  text-decoration: none;
+  font-weight: bolder;
+}
+.containerMisc {
+  display: flex;
+  padding: 3em 2em 1em;
+}
+.containerFlex {
+  flex: 1;
+}
+.desc {
+  padding: 0 2em 2em;
+  text-align: justify;
+  font-size: 14pt;
+}
+@keyframes fadeIn {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
 }
